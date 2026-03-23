@@ -10,7 +10,6 @@ public class Main {
     public static void main(String[] args) {
         AppointmentRepository repo = new AppointmentRepository();
 
-        System.out.println("--- Đang thêm dữ liệu mẫu ---");
         repo.addAppointment(new Appointment("Nguyen Van A", Date.valueOf("2026-03-25"), "Dr. Strange", "Scheduled"));
         repo.addAppointment(new Appointment("Tran Thi B", Date.valueOf("2026-04-10"), "Dr. House", "Confirmed"));
 
