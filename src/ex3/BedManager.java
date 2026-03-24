@@ -6,6 +6,14 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+// Phương thức executeUpdate() trả về một số nguyên (int). Giá trị này đại diện cho số lượng hàng (rows)
+// trong cơ sở dữ liệu thực sự bị tác động (thay đổi) bởi câu lệnh SQL (INSERT, UPDATE, hoặc DELETE)
+
+// dùng kết quả phản hồi:
+// Trường hợp thành công: Nếu giá trị trả về > 0, nghĩa là mã giường tồn tại và trạng thái đã được chuyển sang 'Đang sử dụng'.
+// Trường hợp mã giường không tồn tại: Nếu giá trị trả về bằng 0, điều này khẳng định không có dòng nào
+// trong bảng beds khớp với mã giường (ví dụ: Bed_999) mà giáo vụ đã nhập.
+
 public class BedManager {
     public void updateBedStatus(String inputId) {
         String sql = "UPDATE Beds SET bed_status = 'Occupied' WHERE bed_id = '" + inputId + "'";

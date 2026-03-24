@@ -2,6 +2,12 @@ package ex2;
 
 // loi: if (rs.next()) chỉ kiểm tra 1 lần duy nhất
 
+// Cơ chế hoạt động của con trỏ ResultSet:
+//Ban đầu, con trỏ nằm ở vị trí trước bản ghi đầu tiên (Before First).
+//Mỗi khi gọi phương thức next(), con trỏ sẽ nhảy xuống dòng tiếp theo.
+//Để in được toàn bộ danh sách, chúng ta cần một cấu trúc lặp (như ục while) để liên tgọi next().
+// Vòng lặp sẽ tiếp diễn cho đến khi next() trả về false (nghĩa là đã đi hết danh sách).
+
 import ex1.DBConnection;
 
 import java.sql.Connection;

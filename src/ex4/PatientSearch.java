@@ -7,6 +7,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+// Quá trình nối chuỗi (String Concatenation):
+//Mã nguồn lỗi của bạn thực hiện cộng chuỗi trực tiếp:
+//String sql = "SELECT * FROM patients WHERE name = '" + patientName + "'";
+//Sau khi nối chuỗi, câu lệnh SQL gửi đến Database sẽ trở thành:
+//SELECT * FROM patients WHERE name = '' OR '1'='1'
+
+// heo quy tắc logic của SQL, khi sử dụng toán tử OR, chỉ cần một trong hai điều kiện đúng
+// thì toàn bộ mệnh đề WHERE sẽ trả về kết quả TRUE mà 1 = 1 là điều luôn đúng.
+
 public class PatientSearch {
     public String sanitizeInput(String input) {
         if (input == null) return "";
